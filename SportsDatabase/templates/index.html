@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type=text/javascript>
+			$(function() {
+				$('a#test').bind('click', function() {
+					$.getJSON('/background_process_test',
+					function(data) {
+						//do nothing
+					});
+					return false;
+				});
+			});
+		</script>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/mycss.css') }}">
+		<style>
+			.button {
+		background-color: #4CAF50; /* Green */
+		border: none;
+		color: white;
+		padding: 16px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		transition-duration: 0.4s;
+		cursor: pointer;
+		}
+		
+		.button4 {
+		background-color: white;
+		color: black;
+		border: 2px solid #e7e7e7;
+		}
+		.button4:hover {background-color: #e7e7e7;}
+		
+		</style>
+	</head>
+	<body>
+		
+		<form method="POST" action="">
+			Enter Your Query <input type = "text" name ="Query" />
+			<br>
+			<input type = "submit">
+		</form>
+		
+		<img src="/static/cricket.png" alt="Cricket Icon" style="width:200px;height:200px;">
+		<br>
+		<div class="dropdown">
+			<button class="dropbtn">Dropdown</button>
+			<div class="dropdown-content">
+				<a href="#">
+					<form action="/Showcricketteam/" method="post">
+						<button name="Showcricketteam" class="button button4" type="submit">Show Players</button>
+					</form>
+					
+					<a href="#" id = test><button class="button button4">Second Button</button></a>
+				</div>
+			</div>
+			
+			
+			
+		</body>
+	</html>
